@@ -1,6 +1,6 @@
 Table table;
 ArrayList<String> land = new ArrayList<String>();
-int year = 7; //året er sat til 2010. Minimum er 3 for 2014, og for hvert år under 2010 lægger man bare 1 til.
+int year = 7; 
 
 void setup() {
   table = loadTable("DeathsNaturalDisasters.csv"); 
