@@ -1,0 +1,50 @@
+public class TextBox {
+
+    //variabler
+    float positionX, positionY, sizeX, sizeY;
+    float mouseX, mouseY;
+    String textFletNavn;
+    String indput; 
+
+    boolean klikket = false;
+
+
+    TextBox( int posX, int posY, int sizeX, int sizeY, String text ) {
+ 
+        positionX = posX;
+        positionY = posY;
+        this.sizeX = sizeX;
+        this.sizeY = sizeY;
+        this.textFletNavn = text;
+
+    }
+
+    void KlikTjek(float mouseX, float mouseY) {
+        this.mouseX = mouseX;
+        this.mouseY = mouseY;
+        if (mousePressed){
+            if(     mouseX > positionX &&
+                    mouseX < positionX + sizeX &&
+                    mouseY > positionY &&
+                    mouseY < positionY + sizeY) {
+                klikket=true;
+            }else {
+                klikket=false;
+            }
+        }
+    }
+
+    void tegnTextFlet() {
+      
+        stroke(1, 46, 74, 100);
+        fill(227, 225, 252, 250);
+        rect(positionX, positionY, sizeX, sizeY);
+
+        if(klikket){
+            if(keyPressed){
+                indput = indput + key;
+                
+            }
+        }
+    }
+}
